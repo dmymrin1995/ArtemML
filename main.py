@@ -13,7 +13,6 @@ pred = predict
 @app.route('/', methods=['GET', 'POST'])
 def broken():
     if request.method == 'POST':
-        os.remove('./static/images_predict/images_predict/image.jpg')
         image = request.files['file']
         filename = secure_filename('image.jpg')
         image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))

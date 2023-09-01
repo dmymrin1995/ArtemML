@@ -14,9 +14,9 @@ result = scipy.integrate.quad(
 
 
 def get_predict():
-    predict_image_dir = "static\images_predict"
+    predict_image_dir = "static/images_predict"
     predict_image_generator_0_1 = ImageDataGenerator(rescale=1. / 255)
-    model_load = keras.models.load_model("static\model\model_vgg.h5", compile=False)
+    model_load = keras.models.load_model("static/model/model_vgg.h5", compile=False)
     BATCH_SIZE = 100
     IMG_SHAPE = 150
     predict_data_gen = predict_image_generator_0_1.flow_from_directory(batch_size=BATCH_SIZE,
@@ -30,12 +30,6 @@ def get_predict():
     return predict
 
 
-#def get_exel():
- # df = pd.DataFrame(predict, columns = ['percent damaged'])
-#  df.index += 1
- # df = 100 - df * 100
-  #df.to_excel('exel_predict.xlsx')
- # return df.to_excel('exel_predict.xlsx')
 
 predict = get_predict()
 #exel = get_exel()
