@@ -1,11 +1,6 @@
 from tensorflow import keras
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import scipy.integrate
-from PIL import Image
-import io
-import os
-import pandas as pd
-import scipy.special
 result = scipy.integrate.quad(
   lambda x: scipy.special.jv(2.5, x),
   0,
@@ -32,5 +27,4 @@ def get_predict():
 
 
 predict = get_predict()
-#exel = get_exel()
 print(predict)
